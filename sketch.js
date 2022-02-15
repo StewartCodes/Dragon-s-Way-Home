@@ -3,6 +3,7 @@ var screenVelocity
 var hillsGroup
 var fireballGroup
 var death
+var score
 
 
 function preload(){
@@ -34,13 +35,10 @@ function setup() {
   hills.debug = false;
   hillsGroup.add (hills)
 
-  death = 0
-
-
-
 passiveSound.loop()
 
-
+  death = 0
+  score = 0
   gameState = "playing"
   screenVelocity = -5
 
@@ -54,7 +52,12 @@ function draw() {
 
 
 
-  if (gameState === "playing"){  
+  if (gameState === "playing"){ 
+    textSize(25)
+    score = score + Math.round(getFrameRate()/500);
+    text ("Score: " + score, 50, 50)
+    
+    score = score + Math.round(getFrameRate()/60);
     if (keyDown("Space") || keyDown("w") || keyDown("UP_ARROW")){
       dragon.y -= 5
     }
