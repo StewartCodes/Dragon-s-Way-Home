@@ -8,7 +8,7 @@ var score
 
 function preload(){
   dragonImg = loadImage("dragon.png");
-  hillsImg = loadImage("hills.png");
+  hillsImg = loadImage("Hills.png");
   fireballImg = loadImage("Fireball.png");
 
   deathSound = loadSound("death.wav");
